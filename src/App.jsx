@@ -39,7 +39,9 @@ async function fetchApiJson(
       headers.set('Authorization', encodeBasicCredentials(credentials))
     }
     Object.entries(additionalHeaders).forEach(([name, value]) => headers.set(name, value))
-    response = await fetch(path, {
+    response = await fetch(
+  `${import.meta.env.VITE_API_BASE_URL || ''}${path}`,
+  {
       method,
       headers,
       signal,
