@@ -45,7 +45,7 @@ async function fetchApiJson(
       method,
       headers,
       signal,
-      credentials: 'same-origin',
+      credentials: 'include',
       body: body === undefined ? undefined : JSON.stringify(body),
     })
   } catch (error) {
